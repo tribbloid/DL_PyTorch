@@ -81,7 +81,7 @@ from torchvision import datasets, transforms
 
 # Define a transform to normalize the data
 transform = transforms.Compose([transforms.ToTensor(),
-                                transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)),
+                                transforms.Normalize((0.5,), (0.5,)),  # dataset format changed to greyscale
                                 ])
 # Download and load the training data
 trainset = datasets.MNIST('~/.pytorch/MNIST_data/', download=True, train=True, transform=transform)
